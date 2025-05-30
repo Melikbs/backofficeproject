@@ -1,0 +1,44 @@
+# Ignore Mac system files
+.DS_Store
+
+# Ignore VSCode config
+.vscode/
+.idea/
+
+# Ignore logs
+*.log
+
+# Ignore node_modules everywhere (Angular/Node front-end)
+**/node_modules/
+
+# Ignore npm/yarn locks (optional: keep if you want lock consistency)
+**/yarn.lock
+
+# Ignore dist/build folders (Angular front, or Spring Boot output)
+**/dist/
+**/build/
+**/out/
+
+# Ignore coverage
+**/coverage/
+
+# Ignore environment/config files
+**/.env
+**/.env.*
+
+# Ignore Python caches (if you use Python for AI microservice)
+**/__pycache__/
+**/.pytest_cache/
+**/*.pyc
+
+# Ignore IntelliJ and JetBrains IDE folders
+**/.idea/
+
+# Ignore Java target folders (Maven/Gradle output for Spring Boot)
+**/target/
+**/.classpath
+**/.project
+**/.settings
+
+# Ignore Docker stuff (optional)
+**/.docker/
