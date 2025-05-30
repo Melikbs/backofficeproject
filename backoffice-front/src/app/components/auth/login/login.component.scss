@@ -1,0 +1,197 @@
+// Updated Login SCSS
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #f8f9fa;
+}
+
+.auth-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.auth-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  width: 100%;
+  max-width: 440px;
+  padding: 2.5rem;
+  border: 1px solid #e9ecef;
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+
+  .auth-icon {
+    font-size: 3rem;
+    color: #dc3545;
+    margin-bottom: 1rem;
+  }
+
+  .auth-title {
+    color: #2d2d2d;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .auth-switch {
+    color: #6c757d;
+    a {
+      color: #dc3545;
+      font-weight: 500;
+      &:hover {
+        color: #b02a37;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.auth-form {
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .form-label {
+    display: block;
+    color: #495057;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .input-group {
+    position: relative;
+  }
+
+  .input-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6c757d;
+    font-size: 1rem;
+  }
+
+  .form-control {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.5rem;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+
+    &:focus {
+      border-color: #dc3545;
+      box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.15);
+    }
+  }
+}
+
+.auth-btn {
+  width: 100%;
+  background: #dc3545;
+  color: white;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  &:hover {
+    background: #b02a37;
+    transform: translateY(-1px);
+  }
+
+  .btn-icon {
+    font-size: 0.9rem;
+  }
+}
+
+.auth-footer {
+  margin-top: 1.5rem;
+  text-align: center;
+
+  .forgot-password {
+    color: #6c757d;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #dc3545;
+      text-decoration: none;
+    }
+  }
+}
+
+// Error Popup (keep your existing error styles but adjust colors)
+.error-popup {
+  border-color: #dc3545;
+  
+  .popup-header i {
+    color: #dc3545;
+  }
+  
+  .popup-close-btn {
+    background: #dc3545;
+    &:hover {
+      background: #b02a37;
+    }
+  }
+}
+.custom-swal-container {
+  font-family: 'Votre police', sans-serif;
+}
+
+.custom-swal-popup {
+  border-radius: 12px !important;
+  border: 1px solid #dee2e6 !important;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08) !important;
+}
+
+.custom-swal-title {
+  color: #2d2d2d !important;
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
+}
+
+.custom-swal-text {
+  color: #6c757d !important;
+  font-size: 1rem !important;
+  line-height: 1.5 !important;
+}
+
+.custom-swal-confirm-btn {
+  background: #dc3545 !important;
+  border-radius: 8px !important;
+  padding: 0.5rem 1.5rem !important;
+  font-weight: 500 !important;
+  transition: all 0.3s ease !important;
+  
+  &:hover {
+    background: #b02a37 !important;
+    transform: translateY(-1px);
+  }
+}
+
+.custom-swal-cancel-btn {
+  background: #6c757d !important;
+  border-radius: 8px !important;
+  padding: 0.5rem 1.5rem !important;
+  font-weight: 500 !important;
+  transition: all 0.3s ease !important;
+  
+  &:hover {
+    background: #5a6268 !important;
+    transform: translateY(-1px);
+  }
+}

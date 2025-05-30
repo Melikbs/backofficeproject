@@ -1,0 +1,119 @@
+@startuml
+title Diagramme de Classes Global - Architecture Microservices
+
+package "Service de Gestion des Utilisateurs" {
+  class Utilisateur {
+    +id: Long
+    +nomUtilisateur: String
+    +email: String
+    +motDePasse: String
+    +actif: Boolean
+  }
+
+  class Rôle {
+    +id: Long
+    +nom: String
+  }
+
+  Utilisateur "1" -- "*" Rôle : possède
+}
+
+package "Service des Produits" {
+  class Produit {
+    +id: Long
+    +nom: String
+    +prix: Double
+    +stock: int
+  }
+
+  class Promotion {
+    +id: Long
+    +remise: Double
+    +dateDébut: Date
+    +dateFin: Date
+  }
+
+  class PackProduit {
+    +id: Long
+    +nom: String
+    +remise: Double
+  }
+
+  PackProduit "*" -- "*" Produit : contient
+  Produit "1" -- "0..1" Promotion : bénéficie
+}
+
+package "Service des Commandes" {
+  class Commande {
+    +id: Long
+    +date: Date
+    +statut: String
+  }
+
+  class LigneCommande {
+    +id: Long
+    +quantité: int
+    +prix: Double
+  }
+
+  Commande "1" -- "*" LigneCommande : contient
+  LigneCommande "*" -- "1" Produit : référence
+  Commande "1" -- "1" Utilisateur : passée par
+}
+
+package "Service de Paiement" {
+  class Paiement {
+    +id: Long
+    +montant: Double
+    +statut: String
+    +datePaiement: Date
+  }
+
+  class Facture {
+    +id: Long
+    +date: Date
+    +total: Double
+  }
+
+  class MéthodePaiement {
+    +id: Long
+    +nom: String
+  }
+
+  Paiement "1" -- "1" Commande : concerne
+  Paiement "1" -- "1" MéthodePaiement : via
+  Facture "1" -- "1" Paiement : générée à partir
+}
+
+package "Service de Livraison" {
+  class Livraison {
+    +id: Long
+    +statut: String
+    +numSuivi: String
+  }
+
+  class DemandeRetour {
+    +id: Long
+    +motif: String
+    +statut: String
+  }
+
+  Livraison "1" -- "1" Commande : expédie
+  DemandeRetour "1" -- "1" Commande : concerne
+}
+
+package "Service de Tableau de Bord" {
+  class Statistique {
+    +id: Long
+    +type: String
+    +valeur: String
+  }
+
+  class Rapport {
+    +id: Long
+    +dateGénération: Date
+    +données: String
+  }
+}
+
+@enduml

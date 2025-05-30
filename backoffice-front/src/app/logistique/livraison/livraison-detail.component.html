@@ -1,0 +1,77 @@
+<div class="livraison-page" *ngIf="!loading && livraison && commande">
+  <!-- Left Column -->
+  <div class="left-section">
+    <div class="card soft-shadow mb-4">
+      <div class="card-header bg-gradient-red text-white">
+        <h5 class="mb-0">📦 Delivery #{{ livraison.codeLivraison }}</h5>
+      </div>
+      <div class="card-body">
+        <h6 class="text-uppercase text-muted mb-3">Client Information</h6>
+        <ul class="list-unstyled">
+          <li><strong>Name:</strong> {{ commande.client.nom }} {{ commande.client.prenom }}</li>
+          <li><strong>Email:</strong> {{ commande.client.email }}</li>
+          <li><strong>Phone:</strong> {{ commande.client.tel }}</li>
+          <li><strong>ID (CIN):</strong> {{ commande.client.cin }}</li>
+          <li><strong>Address:</strong> {{ commande.client.rue }}, {{ commande.client.ville }} {{ commande.client.codePostal }}</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card soft-shadow" *ngIf="pdfUrl">
+      <div class="card-header bg-light text-dark">
+        <h6 class="mb-0">📄 Shipping Label</h6>
+      </div>
+      <div class="card-body p-0">
+        <iframe [src]="pdfUrl" width="100%" height="280px" class="border-0 rounded-bottom"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right Column -->
+  <div class="right-section">
+    <div class="card tracking-card soft-shadow">
+      <div class="card-header bg-gradient-danger text-white d-flex justify-content-between align-items-center">
+        <h6 class="mb-0">Delivery Tracking</h6>
+     <span class="badge bg-white text-danger">
+  {{ statusTranslations[livraison.statusLivraison] || livraison.statusLivraison }}
+</span>
+
+      </div>
+
+      <div class="card-body">
+        <p><strong>Tracking Number:</strong> {{ livraison.numTracking || 'Pending...' }}</p>
+        <p><strong>Total Products:</strong> {{ getTotalProducts() }}</p>
+        <p><strong>Total Weight:</strong> {{ getTotalWeight() | number:'1.2-2' }} G</p>
+
+        <button class="btn btn-outline-danger w-100 my-3" (click)="generateLabel(livraison, commande)">
+          📄 Print Label
+        </button>
+
+        <div class="tracking-timeline-vertical mt-4">
+          <div *ngFor="let step of trackingSteps; let i = index" class="v-step">
+            <div class="v-circle" [class.active]="isStepActive(i)"></div>
+            <div class="v-label">{{ statusTranslations[step] || step }}</div>
+
+          </div>
+        </div>
+
+        <div class="card soft-shadow mt-4" *ngIf="commande?.lignes?.length">
+          <div class="card-header bg-light text-dark">
+            <h6 class="mb-0">🛒 Ordered Products</h6>
+          </div>
+          <div class="card-body">
+            <ul class="list-unstyled">
+              <li *ngFor="let l of commande.lignes">
+                • <strong>{{ l.libelleProduit }}</strong> - Quantity: {{ l.quantite }}
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <button class="btn btn-success w-100 mt-3" [disabled]="livraison.statusLivraison !== 'VALIDEE'" (click)="startTracking()">
+          🚚 Start Tracking
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

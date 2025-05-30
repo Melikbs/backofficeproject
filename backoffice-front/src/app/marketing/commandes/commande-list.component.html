@@ -1,0 +1,53 @@
+<div class="orders-container bg-white rounded shadow p-4">
+    <h2 class="text-dark fw-bold mb-4">
+      <i class="fas fa-shopping-cart me-2 text-danger"></i> Orders
+    </h2>
+  
+    <div class="table-responsive">
+      <table class="table table-hover align-middle shadow-sm">
+        <thead style="background-color: #e74c3c; color: white;">
+          <tr>
+            <th scope="col">Order #</th>
+            <th scope="col">Date</th>
+            <th scope="col">Client</th>
+            <th scope="col">Status</th>
+            <th scope="col" class="text-end">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let c of commandes">
+            <td><strong>#{{ c.codeCommande }}</strong></td>
+            <td>{{ c.dateCommande | date }}</td>
+            <td>{{ c.clientNom }} {{ c.clientPrenom }}</td>
+            <td>
+                <span [ngClass]="{
+                  'status-badge validated': c.status === 'VALIDATED',
+                  'status-badge refused': c.status === 'REFUSED',
+                  'status-badge pending': c.status === 'PENDING'
+                }">
+                  {{ getStatusLabel(c.status) }}
+                </span>
+              </td>
+              
+              <td class="text-end d-flex justify-content-end gap-2">
+                <button class="btn-action view" (click)="goToDetails(c.codeCommande)">
+                  <i class="fas fa-eye me-1"></i> View
+                </button>
+              
+                <ng-container *ngIf="c.status === 'PENDING'">
+                  <button class="btn-action refuse" (click)="refuseCommande(c.codeCommande)">
+                    <i class="fas fa-ban me-1"></i> Refuse
+                  </button>
+                  <button class="btn-action validate" (click)="validateCommande(c.codeCommande)">
+                    <i class="fas fa-check me-1"></i> Validate
+                  </button>
+                </ng-container>
+              </td>
+              
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

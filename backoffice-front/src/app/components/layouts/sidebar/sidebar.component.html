@@ -1,0 +1,48 @@
+<div class="sidebar-container" [class.collapsed]="isCollapsed">
+  <!-- Header -->
+  <div class="sidebar-header">
+    <div class="brand-container">
+      <img src="assets/logo_ooredoo.png" alt="Logo" class="brand-logo" />
+      <h6 class="brand-title">| {{ roleDisplayName }}</h6>
+    </div>
+
+    <!-- Toggle button visible only on mobile when sidebar is open -->
+    <button
+      class="toggle-btn-inside"
+      *ngIf="isMobile && !isCollapsed"
+      (click)="toggleSidebar()"
+    >
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+
+  <!-- Panel Title -->
+  <div class="sidebar-panel">
+    <small class="panel-title">{{ panelTitle }}</small>
+  </div>
+
+  <!-- Menu -->
+  <nav class="sidebar-menu">
+    <ul class="nav flex-column">
+      <li class="nav-item" *ngFor="let item of menuItems">
+        <a
+          [routerLink]="item.path"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="nav-link"
+        >
+          <i class="{{ item.icon }}"></i>
+          <span class="menu-text">{{ item.title }}</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Footer -->
+  <div class="sidebar-footer">
+    <div class="user-avatar">
+      <i class="fas fa-user"></i>
+    </div>
+    <div class="user-name" [title]="username">{{ username }}</div>
+  </div>
+</div>

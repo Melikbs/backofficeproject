@@ -1,0 +1,80 @@
+
+<div class="pack-header">
+  <h2 class="pack-title"><i class="fas fa-gift"></i> Packs Management</h2>
+  <button class="create-pack-btn" [routerLink]="['/dashboard/marketing/packs/create']">
+    <i class="fas fa-plus me-2"></i> Create Pack
+  </button>
+</div>
+
+<div class="product-grid">
+  <div class="product-card" *ngFor="let pack of packs">
+    <!-- Product images -->
+    <div class="image-container">
+      <ng-container *ngFor="let produit of pack.produits; let last = last">
+        <img 
+          [src]="'http://localhost:8080/api/produits/images/' + getProduitImage(produit.codeProduit)" 
+          alt="Product image"
+          class="mini-image"
+        />
+        <span *ngIf="!last" class="plus-separator">+</span>
+      </ng-container>
+    </div>
+
+    <!-- Header: Title and Details Button -->
+    <div class="product-header">
+      <h3 class="product-title">{{ pack.nom }}</h3>
+      <button
+        class="details-btn"
+        (click)="toggleDetails(pack)"
+        [attr.aria-expanded]="pack.showDetails"
+        aria-label="Show Details"
+      >
+        <i class="fas" [ngClass]="pack.showDetails ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+        {{ pack.showDetails ? 'Hide Details' : 'Show Details' }}
+      </button>
+    </div>
+
+    <!-- Details: Hidden by default, shown if toggled -->
+    <div class="product-details" *ngIf="pack.showDetails">
+      <p class="product-description">{{ pack.description || 'No description' }}</p>
+      <h6>Discounted Prices:</h6>
+      <ul>
+        <li *ngFor="let p of pack.produits">
+          <span class="prod-name">{{ getProductLabel(p.codeProduit) }}</span>
+          <span class="old-price">{{ getOriginalPrice(p.codeProduit) | number:'1.2-2' }} DT</span>
+          <span class="arrow">→</span>
+          <span class="new-price">{{ calculateDiscountedPrice(p) | number:'1.2-2' }} DT</span>
+        </li>
+      </ul>
+      <div class="pack-total">
+        <span>Total Pack Price</span>
+        <strong>{{ calculateTotalPackPrice(pack.produits) | number:'1.2-2' }} DT</strong>
+      </div>
+    </div>
+
+    <!-- Footer: Meta and Actions -->
+    <div class="product-footer">
+      <div class="meta">
+        <span class="meta-chip"><i class="fas fa-box-open"></i> {{ pack.produits.length }} item(s)</span>
+        <span class="status-badge" [ngClass]="pack.actif ? 'active' : 'archived'">
+          {{ pack.actif ? 'Active' : 'Archived' }}
+        </span>
+      </div>
+     <div class="actions">
+  <button class="action-btn" (click)="togglePackActif(pack.id!)">
+    <i class="fas" [ngClass]="pack.actif ? 'fa-eye-slash' : 'fa-eye'"></i>
+    <span>{{ pack.actif ? 'Hide' : 'Show' }}</span>
+  </button>
+  <button class="action-btn" [routerLink]="['/dashboard/marketing/packs/edit', pack.id]">
+    <i class="bi bi-pencil"></i>
+    <span>Edit</span>
+  </button>
+  <button class="action-btn danger" (click)="deletePack(pack.id!)">
+    <i class="bi bi-trash"></i>
+    <span>Delete</span>
+  </button>
+</div>
+
+    </div>
+  </div>
+</div>

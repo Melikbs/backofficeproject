@@ -1,0 +1,10 @@
+@startuml
+actor "Admin" as Admin
+
+rectangle "Tableau de Bord (BI)" {
+    Admin --> (Voir les statistiques)
+    Admin --> (Générer des rapports)
+    Admin --> (Analyser les tendances)
+}
+
+@enduml

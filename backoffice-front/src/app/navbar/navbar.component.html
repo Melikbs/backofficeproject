@@ -1,0 +1,34 @@
+<nav class="admin-auth-nav">
+  <!-- Left: Branding with Environment Indicator -->
+  <div class="branding">
+    <img src="../../assets/logo_ooredoo.png" alt="Ooredoo Admin" class="logo">
+    
+  </div>
+
+  <!-- Right: Contextual Help & Language -->
+  <div class="auth-context-tools">
+    <!-- Emergency Contact -->
+    <div class="emergency-contact">
+      <i class="fas fa-life-ring"></i>
+      <span>Admin Support: support&#64;ooredoo.tn</span>
+    </div>
+
+    <!-- Language Selector -->
+    <div class="language-selector">
+      <select class="form-select-sm">
+        <option value="en">English</option>
+        <option value="fr">Français</option>
+        <option value="ar">العربية</option>
+      </select>
+    </div>
+
+    <!-- Auth State Toggle -->
+    <div class="auth-state">
+      <span *ngIf="!isLoginPage">Already have access?</span>
+      <a [routerLink]="isLoginPage ? '/register' : '/login'" class="auth-toggle-btn">
+        {{ isLoginPage ? 'Register' : 'Login' }}
+      </a>
+      
+    </div>
+  </div>
+</nav>

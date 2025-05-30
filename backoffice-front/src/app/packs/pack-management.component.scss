@@ -1,0 +1,272 @@
+$primary-color: #dc3545;
+$success-color: #28a745;
+$gray-light: #f8f9fa;
+$gray-mid: #6c757d;
+$gray-dark: #2d2d2d;
+$border-color: #e9ecef;
+
+// Global container
+.container {
+  padding: 2rem;
+}
+
+// Create Pack Button (top right)
+.create-pack-btn {
+  background-color: $primary-color;
+  color: white;
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  transition: background-color 0.3s;
+  &:hover { background-color: darken($primary-color, 8%); }
+}
+
+// The grid of pack cards
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+  align-items: start; 
+}
+
+// Individual pack card
+.product-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  
+  background: #fff;
+  border-radius: 1.25rem;
+  box-shadow: 0 6px 24px rgba(44,62,80,0.11), 0 1.5px 4px rgba(44,62,80,0.06);
+  border: none;
+  transition: box-shadow 0.22s, transform 0.18s;
+  overflow: visible;
+  padding: 0 0 1.5rem 0;
+  position: relative;
+
+  &:hover {
+    box-shadow: 0 10px 30px rgba(44,62,80,0.16), 0 3px 10px rgba(44,62,80,0.10);
+    transform: translateY(-5px) scale(1.015);
+  }
+
+  .image-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.2rem 1.2rem 0.5rem 1.2rem;
+    background: #f9fafb;
+    border-radius: 1.25rem 1.25rem 0 0;
+    min-height: 70px;
+    .mini-image {
+      width: 48px;
+      height: 48px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 1.5px solid #ececec;
+      box-shadow: 0 1px 4px rgba(44,62,80,0.08);
+      background: #f5f5f7;
+    }
+    .plus-separator {
+      font-size: 1.3rem;
+      color: #bdbdbd;
+      font-weight: 700;
+    }
+  }
+
+  .product-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.1rem 1.2rem 0.3rem 1.2rem;
+
+    .product-title {
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: #232323;
+      margin-bottom: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 70%;
+    }
+
+    .details-btn {
+      border: none;
+      background: #edf1fa;
+      color: #3370e2;
+      border-radius: 7px;
+      padding: 0.3rem 0.8rem;
+      font-size: 0.97rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      box-shadow: 0 0.5px 2px rgba(44,62,80,0.05);
+      transition: background 0.13s;
+      &:hover { background: #e0e7fa; }
+    }
+  }
+
+  .product-details {
+    background: #f7f8fa;
+    margin: 0.7rem 1.2rem 0 1.2rem;
+    padding: 1.1rem 1.2rem 1.2rem 1.2rem;
+    border-radius: 0.9rem;
+    box-shadow: 0 1px 3px rgba(44,62,80,0.03);
+    animation: fade-in 0.22s;
+    font-size: 0.97rem;
+    min-height: 120px; // Smooth open/close
+    transition: min-height 0.18s;
+    .product-description {
+      margin-bottom: 0.6rem;
+      color: #78797c;
+      font-size: 0.97rem;
+    }
+    ul {
+      margin: 0.3rem 0 1.2rem 0;
+      padding-left: 0;
+      list-style: none;
+      li {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-size: 0.98rem;
+        .prod-name { font-weight: 600; color: #232323; }
+        .old-price { text-decoration: line-through; color: #df5353; font-size: 0.98rem; }
+        .arrow { color: #bdbdbd; font-size: 1.05rem; }
+        .new-price { color: #247c40; font-weight: 700; }
+      }
+    }
+    .pack-total {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-size: 1.09rem;
+      span { color: #555; }
+      strong { color: #dc3545; font-size: 1.13rem; }
+    }
+  }
+
+  // Footer always at bottom, centered!
+  .product-footer {
+    margin-top: auto;
+    padding: 1.1rem 1.2rem 0 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+
+    .meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.1rem;
+      margin-bottom: 0.85rem;
+      .meta-chip {
+        background: #edecec;
+        color: #b03a2e;
+        border-radius: 18px;
+        font-size: 0.89rem;
+        padding: 0.34rem 0.95rem;
+        display: flex;
+        align-items: center;
+        gap: 0.35rem;
+      }
+      .status-badge {
+        border-radius: 14px;
+        padding: 0.3rem 0.95rem;
+        font-size: 0.92rem;
+        font-weight: 600;
+        &.active { background: rgba($success-color, 0.12); color: $success-color; }
+        &.archived { background: rgba($primary-color, 0.13); color: $primary-color; }
+      }
+    }
+    .actions {
+      display: flex;
+      gap: 0.65rem;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      .action-btn {
+        background: #f7f8fc;
+        border: none;
+        border-radius: 8px;
+        padding: 0.49rem 1.25rem;
+        color: #7a869a;
+        font-size: 1.05rem;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 0.36rem;
+        box-shadow: 0 1px 4px rgba(44,62,80,0.07);
+        transition: background 0.13s, color 0.13s, box-shadow 0.16s;
+        i { font-size: 1.18rem; }
+        span { display: inline; font-size: 1rem; color: #232323; }
+        &:hover, &:focus {
+          background: $primary-color;
+          color: #fff;
+          box-shadow: 0 2px 8px rgba(220,53,69,0.09);
+          i, span { color: #fff; }
+        }
+        &.danger {
+          background: #faeaea;
+          color: #b72d2d;
+          &:hover, &:focus {
+            background: $primary-color;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Animate details in/out
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(12px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+.pack-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+
+  .pack-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: $gray-dark;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0;
+  }
+
+  .create-pack-btn {
+    background-color: $primary-color;
+    color: white;
+    font-weight: 600;
+    margin-right: 200px;
+    margin-top: 50px;
+    padding: 0.65rem 1.4rem;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background-color 0.2s, transform 0.2s;
+    i { font-size: 0.95rem; }
+    &:hover {
+      background-color: darken($primary-color, 8%);
+      transform: translateY(-1px);
+    }
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+}

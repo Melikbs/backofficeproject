@@ -1,0 +1,101 @@
+$red-soft: #e74c3c;
+$gray-light: #f8f9fa;
+$gray-dark: #343a40;
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.marque-card {
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+
+  &:hover {
+    background-color: $gray-light;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  .logo-img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    border-radius: 8px;
+    background-color: $gray-light;
+    padding: 4px;
+    border: 1px solid #e0e0e0;
+  }
+
+  h5 {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: $gray-dark;
+    margin-bottom: 0.25rem;
+  }
+
+  .meta {
+    font-size: 0.85rem;
+    color: #6c757d;
+  }
+
+  .badge {
+    font-size: 0.7rem;
+    padding: 0.35rem 0.7rem;
+    border-radius: 1rem;
+    font-weight: 500;
+  }
+
+  .btn {
+    font-size: 0.8rem;
+    padding: 0.45rem 1rem;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+
+    i {
+      font-size: 0.85rem;
+    }
+
+    &:hover {
+      transform: translateY(-1px);
+    }
+
+    &:active {
+      transform: scale(0.96);
+    }
+  }
+
+  .btn-warning {
+    background-color: lighten($red-soft, 15%);
+    border: none;
+    color: #fff;
+
+    &:hover {
+      background-color: $red-soft;
+    }
+  }
+
+  .btn-danger {
+    background-color: $red-soft;
+    border: none;
+    color: white;
+
+    &:hover {
+      background-color: darken($red-soft, 8%);
+    }
+  }
+
+  .btn-secondary {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+
+    &:hover {
+      background-color: darken(#6c757d, 8%);
+    }
+  }
+}

@@ -1,0 +1,111 @@
+$red-soft: #e74c3c;
+$gray-light: #f8f9fa;
+$gray-mid: #6c757d;
+$gray-dark: #343a40;
+
+.livraison-list-container {
+  background-color: $gray-light;
+  padding: 2rem;
+  border-radius: 1rem;
+
+  .list-title {
+    color: $gray-dark;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+
+  .table-wrapper {
+    overflow-x: auto;
+  }
+
+  table.stylish-table {
+    width: 100%;
+    background-color: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    border-collapse: separate;
+    border-spacing: 0;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+
+    thead {
+      background-color: $gray-light;
+      color: $gray-dark;
+
+      th {
+        padding: 0.75rem 1rem;
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        border-bottom: 2px solid #dee2e6;
+      }
+    }
+
+    tbody {
+      tr {
+        transition: background-color 0.25s ease;
+
+        &:hover {
+          background-color: #f2f2f2;
+        }
+
+        td {
+          padding: 0.75rem 1rem;
+          color: $gray-dark;
+          vertical-align: middle;
+          border-bottom: 1px solid #eee;
+
+          .btn {
+            font-size: 0.85rem;
+            padding: 0.4rem 0.75rem;
+            border-radius: 20px;
+            font-weight: 500;
+          }
+
+          .btn-validate {
+            background-color: $gray-dark;
+            color: white;
+            border: none;
+
+            &:hover {
+              background-color: darken($gray-dark, 10%);
+            }
+
+            &:disabled {
+              background-color: lighten($gray-dark, 15%);
+              opacity: 0.6;
+              cursor: not-allowed;
+            }
+          }
+
+          .btn-details {
+            background-color: transparent;
+            color: $red-soft;
+            border: 1px solid $red-soft;
+
+            &:hover {
+              background-color: $red-soft;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+
+    .badge {
+      font-size: 0.75rem;
+      padding: 0.4rem 0.75rem;
+      border-radius: 20px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .bg-secondary { background-color: $gray-mid; color: white; }
+    .bg-primary   { background-color: $gray-dark; color: white; }
+    .bg-warning   { background-color: #f0ad4e; color: white; }
+    .bg-info      { background-color: #5bc0de; color: white; }
+    .bg-dark      { background-color: #2c3e50; color: white; }
+    .bg-success   { background-color: $red-soft; color: white; }
+    .bg-light     { background-color: #ecf0f1; color: $gray-dark; }
+  }
+}

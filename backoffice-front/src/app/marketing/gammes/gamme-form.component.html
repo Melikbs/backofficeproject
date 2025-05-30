@@ -1,0 +1,23 @@
+<div class="container py-4">
+    <h2>{{ isEdit ? 'Modifier' : 'Créer' }} une Gamme</h2>
+  
+    <form (ngSubmit)="onSubmit()" class="mt-4">
+      <div class="mb-3">
+        <label for="codeGamme" class="form-label">Code Gamme</label>
+        <input type="text" id="codeGamme" [(ngModel)]="gamme.codeGamme" name="codeGamme" class="form-control" required>
+      </div><div class="mb-3">
+        <label for="libelle" class="form-label">Libellé</label>
+        <input type="text" id="libelle" [(ngModel)]="gamme.libelle" name="libelle" class="form-control" required>
+      </div>
+      
+  
+      <div class="form-check mb-3">
+        <input type="checkbox" id="flag" [(ngModel)]="gamme.flag" name="flag" class="form-check-input">
+        <label for="flag" class="form-check-label">Actif</label>
+      </div>
+  
+      <button type="submit" class="btn btn-danger">{{ isEdit ? 'Mettre à jour' : 'Créer' }}</button>
+      <button type="button" class="btn btn-secondary ms-2" (click)="router.navigate(['/gammes'])">Annuler</button>
+    </form>
+  </div>
+  

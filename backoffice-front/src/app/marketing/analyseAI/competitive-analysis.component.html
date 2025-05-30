@@ -1,0 +1,55 @@
+<div class="analyze-wrapper">
+  <!-- Header -->
+  <div class="header-section">
+    <h2>Competitive Analysis</h2>
+    <p class="subtitle">
+      Compare your products with market offerings to make the best strategic decisions.
+    </p>
+
+    <div class="input-group">
+      <label for="productSelect">Select a product</label>
+      <select id="productSelect" [(ngModel)]="productId">
+        <option [ngValue]="null" disabled>-- Select a product --</option>
+        <option *ngFor="let product of products" [ngValue]="product.codeProduit">
+          {{ product.libelle }}
+        </option>
+      </select>
+      <button class="analyze-btn" (click)="runAnalysis()">
+        Run Analysis
+      </button>
+    </div>
+  </div>
+
+  <!-- Loader -->
+  <div *ngIf="loading" class="loader">⏳ Analysis in progress...</div>
+  <div *ngIf="error" class="error-message">❌ {{ error }}</div>
+
+  <!-- Result -->
+  <div class="result-section" *ngIf="result">
+    <div class="product-title">{{ result.product_name }}</div>
+
+    <div class="suggestion-box">
+      <h4>💡 AI Suggestion</h4>
+      <p>{{ result.suggestion }}</p>
+    </div>
+
+    <table class="result-table">
+      <thead>
+        <tr>
+          <th>Site</th>
+          <th>Competitor Price</th>
+          <th>Link</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let r of result.results">
+          <td>{{ r.site }}</td>
+          <td>{{ r.price }}</td>
+          <td>
+            <a [href]="r.url" target="_blank">View</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

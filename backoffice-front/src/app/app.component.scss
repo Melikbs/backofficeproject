@@ -1,0 +1,105 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.global-spinner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #E9374C;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+// ✅ Responsive Tweaks
+@media (max-width: 768px) {
+  .mat-toolbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .spinner {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 12px;
+  }
+
+  .global-spinner {
+    background: rgba(255, 255, 255, 0.9);
+  }
+
+  .spinner {
+    width: 30px;
+    height: 30px;
+  }
+}
+body.modal-open .layout-container,
+body.modal-open app-sidebar,
+body.modal-open .overlay,
+body.modal-open .main-content,
+body.modal-open .page-content,
+body.swal2-shown .layout-container,
+body.swal2-shown app-sidebar,
+body.swal2-shown .overlay,
+body.swal2-shown .main-content,
+body.swal2-shown .page-content {
+  pointer-events: none !important;
+}
+body.modal-open::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0); /* ou rgba(0,0,0,0.4) si tu veux un effet visuel */
+  z-index: 1050; /* au-dessus de la sidebar */
+  pointer-events: auto;
+}
+.global-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0); // transparent (ou un effet visuel si tu veux)
+  z-index: 1050; // au-dessus de la sidebar (1000) et du contenu principal (998), sous la modal (1055)
+  pointer-events: auto;
+}

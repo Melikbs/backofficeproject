@@ -1,0 +1,25 @@
+@startuml
+actor "Administrateur" as Admin
+participant "Interface d’administration" as UI
+participant "Backend" as Backend
+database "Base de données" as DB
+actor "Utilisateur" as User
+participant "Système de notification (Email)" as Mail
+
+Admin -> UI: Accède à la liste des comptes inactifs
+UI -> Backend: Demande la liste des comptes inactifs
+Backend -> DB: Récupère la liste des comptes inactifs
+DB --> Backend: Liste des comptes
+Backend --> UI: Affiche la liste
+
+Admin -> UI: Sélectionne un compte à activer
+UI -> Backend: Demande l’activation du compte
+Backend -> DB: Active le compte et attribue un rôle (logistique/marketing)
+DB --> Backend: Confirmation d’activation
+
+Backend -> Mail: Envoie un email informatif à l’utilisateur
+Mail -> User: Email « Votre compte est désormais actif »
+Backend -> UI: Confirme à l’administrateur que le compte est activé
+@enduml
+
+

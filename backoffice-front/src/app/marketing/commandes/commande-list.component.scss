@@ -1,0 +1,73 @@
+$status-radius: 30px;
+$red-soft: #e74c3c;
+$gray-light: #f8f9fa;
+$gray-dark: #343a40;
+
+$status-radius: 999px;
+
+.status-badge {
+  padding: 0.35rem 1.2rem;
+  border-radius: $status-radius;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  display: inline-block;
+  letter-spacing: 0.5px;
+
+  &.validated {
+    background-color: rgba(46, 204, 113, 0.12);
+    color: #27ae60;
+  }
+
+  &.refused {
+    background-color: rgba(231, 76, 60, 0.12);
+    color: $red-soft;
+  }
+
+  &.pending {
+    background-color: rgba(243, 156, 18, 0.12);
+    color: #f39c12;
+  }
+}
+
+.btn-action {
+  border: none;
+  font-weight: 500;
+  padding: 0.45rem 1.1rem;
+  border-radius: $status-radius;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  text-transform: uppercase;
+  transition: all 0.2s ease-in-out;
+
+  &.view {
+    background-color: white;
+    border: 1px solid $gray-dark;
+    color: $gray-dark;
+
+    &:hover {
+      background-color: $gray-dark;
+      color: white;
+    }
+  }
+
+  &.validate {
+    background-color: #27ae60;
+    color: white;
+
+    &:hover {
+      background-color: #1e8449;
+    }
+  }
+
+  &.refuse {
+    background-color: $red-soft;
+    color: white;
+
+    &:hover {
+      background-color: darken($red-soft, 10%);
+    }
+  }
+}

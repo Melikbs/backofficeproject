@@ -1,0 +1,21 @@
+@startuml
+left to right direction
+
+actor "Responsable marketing" as RM
+
+package "Gestion des Clients" {
+  usecase "Gestion des Clients" as UC0
+  usecase "Consulter" as UC1
+  usecase "Blacklister" as UC2
+  usecase "Unblacklister" as UC3
+  usecase "authentifier" as UC4
+
+  UC1 ..> UC0 : <<extend>>
+  UC2 ..> UC0 : <<extend>>
+  UC3 ..> UC0 : <<extend>>
+  UC0 --> UC4 : <<include>>
+}
+
+RM --> UC0
+
+@enduml

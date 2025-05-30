@@ -1,1 +1,251 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'ngx-toastr/toastr';
+
+// ✅ Core Layout
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-family: 'Roboto', sans-serif;
+}
+
+// ✅ Buttons
+.primary-btn {
+  background-color: #dc3545 !important;
+  color: white !important;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background 0.3s;
+
+  &:hover {
+    background-color: darken(#dc3545, 8%) !important;
+  }
+}
+
+// ✅ Navbar
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  .logo {
+    height: 50px;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 10px;
+  }
+}
+
+// ✅ Form Container
+.form-bg {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100vw;
+  padding: 1rem;
+  margin-top: 10px;
+  flex-grow: 1;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.form-container {
+  max-width: 420px;
+  width: 100%;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+}
+
+// ✅ SweetAlert Scroll Freeze Fix
+body.swal2-shown {
+  overflow: hidden !important;
+  padding-right: var(--scrollbar-width, 0px) !important;
+  touch-action: none;
+  overscroll-behavior: contain;
+}
+
+// ✅ File Upload Style
+.file-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.file-input-label {
+  background-color: #dc3545;
+  color: white;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.file-input-label:hover {
+  background-color: darken(#dc3545, 8%);
+}
+
+.upload-icon {
+  font-size: 1rem;
+}
+
+.file-name {
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
+  color: #6c757d;
+  font-style: italic;
+  padding-left: 0.25rem;
+}
+
+.image-preview-container {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.image-preview {
+  max-width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+  padding: 0.5rem;
+}
+
+// ✅ SweetAlert Styling
+.custom-swal-popup {
+  border-radius: 20px !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2) !important;
+
+  .swal-content {
+    padding: 2rem;
+    text-align: center;
+  }
+}
+
+.swal-title {
+  color: #fff !important;
+  font-size: 1.8rem !important;
+  font-weight: 600 !important;
+}
+
+.swal-confirm-btn {
+  background: rgba(255,255,255,0.9) !important;
+  color: #2c3e50 !important;
+  border-radius: 50px !important;
+  padding: 0.8rem 2.5rem !important;
+  font-weight: 600 !important;
+  border: none !important;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1) !important;
+}
+
+.swal2-animate-top {
+  animation: slideFromTop 0.4s ease forwards;
+}
+
+.swal2-hide-custom {
+  animation: slideToTopFadeOut 0.3s ease forwards;
+}
+
+@keyframes slideFromTop {
+  from { opacity: 0; transform: translateY(-40px) scale(0.95); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes slideToTopFadeOut {
+  from { opacity: 1; transform: translateY(0) scale(1); }
+  to   { opacity: 0; transform: translateY(-40px) scale(0.95); }
+}
+
+// ✅ Responsive
+@media (max-width: 768px) {
+  .form-container {
+    max-width: 100%;
+    margin-top: 10px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form-bg {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 12px;
+  }
+
+  .logo {
+    height: 40px;
+  }
+}
+body.modal-open::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0); // ou rgba(0,0,0,0.4) si tu veux un effet visuel
+  z-index: 1050;
+  pointer-events: auto;
+}
+body.modal-open .layout-container,
+body.modal-open app-sidebar,
+body.modal-open .overlay,
+body.modal-open .main-content,
+body.modal-open .page-content,
+body.swal2-shown .layout-container,
+body.swal2-shown app-sidebar,
+body.swal2-shown .overlay,
+body.swal2-shown .main-content,
+body.swal2-shown .page-content {
+  pointer-events: none !important;
+}
+
+body.modal-open::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0); /* ou rgba(0,0,0,0.4) si tu veux un effet visuel */
+  z-index: 1050; /* au-dessus de la sidebar */
+  pointer-events: auto;
+}
+.global-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0); // transparent (ou un effet visuel si tu veux)
+  z-index: 1050; // au-dessus de la sidebar (1000) et du contenu principal (998), sous la modal (1055)
+  pointer-events: auto;
+}

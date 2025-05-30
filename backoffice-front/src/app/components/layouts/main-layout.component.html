@@ -1,0 +1,24 @@
+<div class="layout-container" [ngClass]="{ 'sidebar-open': !isSidebarCollapsed || !isMobile }">
+  
+  <app-sidebar (collapseChange)="onSidebarToggle($event)"></app-sidebar>
+  
+  <!-- ✅ BACKDROP HTML global, rendu seulement quand un modal Bootstrap est actif -->
+  <div 
+    class="global-backdrop"
+    *ngIf="isModalOpen"
+    (click)="$event.stopPropagation()">
+  </div>
+
+  <div 
+    class="overlay" 
+    *ngIf="isMobile && !isSidebarCollapsed" 
+    (click)="onSidebarToggle(true)">
+  </div>
+
+  <div class="main-content" [class.dimmed]="isMobile && !isSidebarCollapsed">
+    <app-navbar-main-layout (toggleSidebar)="onSidebarToggle(!isSidebarCollapsed)"></app-navbar-main-layout>
+    <div class="page-content">
+      <router-outlet (activate)="updateTitle($event)"></router-outlet>
+    </div>
+  </div>
+</div>

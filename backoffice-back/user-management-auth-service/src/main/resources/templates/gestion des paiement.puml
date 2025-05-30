@@ -1,0 +1,39 @@
+@startuml
+actor "Admin" as Admin
+actor "Responsable Logistique" as RL
+actor "Responsable Marketing" as RM
+
+== Facturation (Admin) ==
+Admin -> "Système" : Générer la facture pour une commande (id commande)
+"Système" -> "Base de données" : Récupérer les informations de la commande (produits, quantités, prix)
+"Système" -> "Base de données" : Calculer le montant total
+"Système" -> "Base de données" : Enregistrer la facture (id commande, montant)
+"Système" -> Admin : Afficher la facture générée (id facture, montant)
+
+== Remboursement (Admin) ==
+Admin -> "Système" : Demander un remboursement pour une commande (id commande)
+"Système" -> "Base de données" : Vérifier l'état de la commande (ex: annulée, retournée)
+alt Commande éligible au remboursement
+    "Système" -> "Base de données" : Mettre à jour l'état de la commande (remboursement)
+    "Système" -> "Base de données" : Effectuer le remboursement (montant)
+    "Système" -> Admin : Confirmer le remboursement effectué
+else Commande non éligible au remboursement
+    "Système" -> Admin : Avertir que la commande n'est pas éligible au remboursement
+end
+
+== Méthodes de paiement (Admin) ==
+Admin -> "Système" : Gérer les méthodes de paiement (ajouter, supprimer)
+"Système" -> "Base de données" : Mettre à jour les méthodes de paiement disponibles
+"Système" -> Admin : Confirmer la gestion des méthodes de paiement
+
+== Vérification des paiements (Responsable Logistique) ==
+RL -> "Système" : Vérifier si la commande est payée (id commande)
+"Système" -> "Base de données" : Récupérer les informations de paiement
+"Système" -> RL : Afficher le statut du paiement (payé, en attente, échec)
+
+== Validation du paiement (Responsable Logistique) ==
+RL -> "Système" : Valider le paiement d'une commande (id commande)
+"Système" -> "Base de données" : Mettre à jour le statut de la commande (payée)
+"Système" -> RL : Confirmer la validation du paiement
+
+@enduml

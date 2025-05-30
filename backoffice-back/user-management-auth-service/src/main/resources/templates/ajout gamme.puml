@@ -1,0 +1,21 @@
+@startuml
+actor "Responsable logistique" as RL
+participant "Interface de gestion" as UI
+participant "Backend" as Backend
+database "Base de données" as DB
+
+
+RL -> UI : Consulter la liste des livraisons
+UI -> Backend : Requête pour obtenir la liste des livraisons
+Backend -> DB : Récupérer la liste des livraisons
+DB --> Backend : Liste des livraisons
+Backend --> UI : Liste des livraisons
+
+RL -> UI : Sélectionner une livraison à valider
+UI -> Backend : Requête de validation de la livraison
+Backend -> DB : Mettre à jour l'état de la livraison (validée)
+DB --> Backend : Confirmation de la mise à jour
+
+Backend --> UI : Confirmer la validation de la livraison
+UI --> RL : Afficher confirmation de validation
+@enduml

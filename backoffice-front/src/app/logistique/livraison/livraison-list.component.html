@@ -1,0 +1,41 @@
+<div class="livraison-list-container">
+  <h2 class="list-title">📦 Delivery List</h2>
+  <div class="table-wrapper">
+    <table class="table stylish-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Order</th>
+          <th>Tracking</th>
+          <th>Date</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let l of livraisons">
+          <td>{{ l.codeLivraison }}</td>
+          <td>#{{ l.codeCommande }}</td>
+          <td>{{ l.numTracking || '-' }}</td>
+          <td>{{ l.dateLivraison | date: 'short' }}</td>
+          <td>
+  <span [ngClass]="getStatusClass(l.statusLivraison)">
+    {{ statusTranslations[l.statusLivraison] || l.statusLivraison }}
+  </span>
+</td>
+
+          <td>
+            <button class="btn btn-validate"
+                    [disabled]="l.statusLivraison !== 'CREE'"
+                    (click)="valider(l.codeLivraison)">
+              ✅ Validate
+            </button>
+            <button class="btn btn-details" (click)="details(l.codeLivraison)">
+              🔍 Details
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

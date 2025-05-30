@@ -1,0 +1,106 @@
+.layout-container {
+  display: flex;
+
+  app-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 100vh;
+    background-color: white;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+  }
+
+  .main-content {
+    flex: 1;
+    padding: 1rem;
+    background-color: #f4f5f7;
+    min-height: 100vh;
+    transition: margin-left 0.3s ease;
+    z-index: 998;
+    position: relative;
+  }
+
+.main-content.dimmed {
+  pointer-events: auto !important;
+  z-index: 0 !important; // s’assure que la modale reste au-dessus
+}
+
+.modal-backdrop {
+  z-index: 1040 !important;
+}
+
+.modal {
+  z-index: 1050 !important;
+}
+
+
+
+  // ➕ Appliquer le bon margin-left en desktop si sidebar est ouverte
+  &.sidebar-open .main-content {
+    @media (min-width: 768px) {
+      margin-left: 280px;
+    }
+  }
+
+  // En mobile: cache le sidebar par défaut
+  @media (max-width: 767px) {
+    app-sidebar {
+      transform: translateX(-100%);
+    }
+
+    &.sidebar-open app-sidebar {
+      transform: translateX(0);
+    }
+
+    .main-content {
+      margin-left: 0;
+    }
+  }
+}
+
+
+// Overlay gris foncé
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+}
+
+// Bouton flottant
+.toggle-btn-floating {
+  position: fixed;
+  top: 0.75rem;
+  left: 1rem;
+  z-index: 2001;
+  background: white;
+  border-radius: 0%;
+  width: 55px;
+  height: 60px;
+  border: none;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #343a40;
+
+  &:hover {
+    background-color: #f1f1f1;
+    color: #e74c3c;
+  }
+}
+@media (min-width: 768px) {
+  .layout-container.sidebar-open .main-content {
+    margin-left: 280px !important;
+    width: calc(100% - 280px); // 👈 évite le débordement ou perte de contenu
+  }
+}
+
+.page-content {
+  min-width: 0;
+}

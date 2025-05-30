@@ -1,0 +1,40 @@
+@startuml
+actor "Admin" as Admin
+actor "Responsable Logistique" as RL
+actor "Responsable Marketing" as RM
+entity "Système" as Systeme
+
+== Accès au Tableau de Bord ==
+
+Admin -> Systeme : Consulter tableau de bord complet (statistiques globales)
+Systeme -> Admin : Afficher statistiques générales (commandes, paiements, expéditions)
+
+alt Responsable Logistique accède au tableau
+    RL -> Systeme : Consulter tableau de bord logistique (stocks, livraisons)
+    Systeme -> RL : Afficher statistiques logistique (stock, expéditions)
+end
+
+alt Responsable Marketing accède au tableau
+    RM -> Systeme : Consulter tableau de bord marketing (produits, promotions)
+    Systeme -> RM : Afficher statistiques marketing (performances produits, promos)
+end
+
+== Reporting et Analyses ==
+
+Admin -> Systeme : Demander rapport complet (ventes, retours, performances)
+Systeme -> Admin : Générer rapport complet
+Systeme -> Admin : Afficher rapport complet
+
+alt Reporting Logistique
+    RL -> Systeme : Demander rapport logistique (retours, livraisons)
+    Systeme -> RL : Générer rapport logistique
+    Systeme -> RL : Afficher rapport logistique
+end
+
+alt Reporting Marketing
+    RM -> Systeme : Demander rapport marketing (produits populaires, promotions)
+    Systeme -> RM : Générer rapport marketing
+    Systeme -> RM : Afficher rapport marketing
+end
+
+@enduml

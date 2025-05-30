@@ -1,0 +1,39 @@
+@startuml
+
+class Utilisateur {
+  - codeUtilisateur: long
+  - nom: String
+  - prénom: String
+  - email: String
+  - username: String
+  - password: String
+  - enabled: boolean
+
+  + getListUtilisateurs()
+  + getUtilisateur(Long codeUtilisateur)
+  + addUtilisateur(UtilisateurDto u)
+  + updateUtilisateur(Long codeUtilisateur, UtilisateurDto u)
+  + flagUtilisateur(Long codeUtilisateur)
+  + signin(UtilisateurDto u)
+}
+
+class Role {
+  - codeRole: long
+  - libellé: String
+
+  + getListRoles()
+  + getRole(Long codeRole)
+  + addRole(RoleDto r)
+}
+
+Utilisateur "1..*" --> "1" Role : Appartenir
+
+class Admin
+class Logistique
+class DigitalSales
+
+Admin --|> Utilisateur
+Logistique --|> Utilisateur
+DigitalSales --|> Utilisateur
+
+@enduml

@@ -1,0 +1,20 @@
+@startuml
+|Client|
+start
+:Passer commande;
+|Marketing|
+:Recevoir commande;
+if (Commande validée?) then (Oui)
+  :Valider commande;
+  |Logistique|
+  :Préparer commande;
+  :Expédier commande;
+  |Client|
+  :Recevoir notification de livraison;
+else (Non)
+  :Refuser commande;
+  |Client|
+  :Recevoir notification de refus;
+endif
+stop
+@enduml

@@ -1,0 +1,116 @@
+<div class="dashboard-container">
+  <div class="stats-grid">
+    <div class="stat-card yellow">
+      <div class="icon"><i class="fas fa-shopping-cart"></i></div>
+      <div class="details">
+        <small>Sales Today</small>
+        <h3>{{ statistics?.salesToday }}</h3>
+      </div>
+    </div>
+    <div class="stat-card green">
+      <div class="icon"><i class="fas fa-calendar-week"></i></div>
+      <div class="details">
+        <small>Sales This Week</small>
+        <h3>{{ statistics?.salesThisWeek }}</h3>
+      </div>
+    </div>
+    <div class="stat-card blue">
+      <div class="icon"><i class="fas fa-calendar-alt"></i></div>
+      <div class="details">
+        <small>Sales This Month</small>
+        <h3>{{ statistics?.salesThisMonth }}</h3>
+      </div>
+    </div>
+    <div class="stat-card red">
+      <div class="icon"><i class="fas fa-exclamation-triangle"></i></div>
+      <div class="details">
+        <small>Pending Orders</small>
+        <h3>{{ statistics?.pendingOrders }}</h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="charts-row">
+    <div class="chart-card">
+      <h5>Revenue & Sales</h5>
+      <div class="chart-wrapper">
+        <canvas #salesCanvas></canvas>
+      </div>
+    </div>
+    <div class="chart-card">
+      <h5>Top Products Sold</h5>
+      <div class="chart-wrapper">
+        <canvas #productsCanvas></canvas>
+      </div>
+    </div>
+  </div>
+
+ <!-- Assistant Toggle Button -->
+<div class="ai-toggle-button" (click)="toggleBubble()" *ngIf="!showBubble">
+  <i class="fas fa-comment-dots"></i>
+</div>
+
+<!-- Elegant Chatbot Widget -->
+<div class="elegant-chat-widget" *ngIf="showBubble">
+  <div class="widget-header">
+    <div class="branding">
+      <div class="circle-avatar">
+        <i class="fas fa-robot"></i>
+      </div>
+      <div class="info">
+        <strong>Nova AI</strong>
+        <span>Virtual Advisor</span>
+      </div>
+    </div>
+    <button class="close-widget" (click)="toggleBubble()">&times;</button>
+  </div>
+
+  <div class="widget-body">
+    <div class="chat-log">
+      <div *ngFor="let msg of chatMessages" [ngClass]="msg.role === 'user' ? 'msg user-msg' : 'msg bot-msg'">
+        <div class="msg-bubble">{{ msg.text }}</div>
+      </div>
+      <div *ngIf="chatLoading" class="msg bot-msg">
+        <div class="msg-bubble typing">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="warningMessage" class="chat-warning">{{ warningMessage }}</div>
+
+    <div class="chat-controls">
+      <input type="text" [(ngModel)]="userInput" (keydown.enter)="sendMessage()" placeholder="What would you like to know?" />
+      <button (click)="sendMessage()" [disabled]="chatLoading || !userInput.trim()">
+        <i class="fas fa-paper-plane"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+
+
+  <!-- Top Clients Table -->
+  <div class="card top-clients-card">
+    <h5>Top 5 Clients</h5>
+    <table>
+      <thead>
+        <tr>
+          <th>Client</th>
+          <th>Total Items Bought</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let entry of statistics?.topClients | keyvalue">
+          <td>{{ entry.key }}</td>
+          <td>{{ entry.value }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+
+
+
+</div>

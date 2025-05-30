@@ -1,0 +1,66 @@
+@startuml
+actor "Admin" as Admin
+actor "Responsable Marketing" as RM
+actor "Responsable Logistique" as RL
+
+== CRUD - Gestion des Produits (Admin & Responsable Marketing) ==
+Admin -> "Système" : Ajouter un produit (nom, prix, description, stock)
+"Système" -> "Base de données" : Vérifier si produit existe déjà
+alt Produit non existant
+    "Système" -> "Base de données" : Enregistrer le nouveau produit
+    "Système" -> Admin : Confirmer ajout du produit
+else Produit existe déjà
+    "Système" -> Admin : Avertir produit déjà existant
+end
+
+Admin -> "Système" : Modifier un produit (id produit, nouvelles informations)
+"Système" -> "Base de données" : Vérifier si produit existe (id produit)
+alt Produit existant
+    "Système" -> "Base de données" : Mettre à jour les informations du produit
+    "Système" -> Admin : Confirmer mise à jour du produit
+else Produit non existant
+    "Système" -> Admin : Avertir produit non trouvé
+end
+
+Admin -> "Système" : Supprimer un produit (id produit)
+"Système" -> "Base de données" : Vérifier si produit existe (id produit)
+alt Produit existant
+    "Système" -> "Base de données" : Supprimer le produit
+    "Système" -> Admin : Confirmer suppression du produit
+else Produit non trouvé
+    "Système" -> Admin : Avertir produit non trouvé
+end
+
+== Gestion des Stocks (Responsable Logistique) ==
+RL -> "Système" : Demander mise à jour des stocks (id produit, nouvelle quantité)
+"Système" -> "Base de données" : Vérifier si produit existe (id produit)
+alt Produit existant
+    "Système" -> "Base de données" : Récupérer quantité actuelle
+    "Système" -> "Base de données" : Mettre à jour la quantité du produit
+    "Système" -> RL : Confirmer mise à jour du stock
+else Produit non trouvé
+    "Système" -> RL : Avertir produit non trouvé
+end
+
+== Promotions (Responsable Marketing) ==
+RM -> "Système" : Créer une promotion (id produit, remise en %)
+"Système" -> "Base de données" : Vérifier si produit existe (id produit)
+alt Produit existant
+    "Système" -> "Base de données" : Créer la promotion (remise)
+    "Système" -> RM : Confirmer création de la promotion
+else Produit non trouvé
+    "Système" -> RM : Avertir produit non trouvé
+end
+
+== Gestion des Packs (Responsable Marketing) ==
+RM -> "Système" : Créer un pack de produits (produits sélectionnés, remise sur pack)
+"Système" -> "Base de données" : Vérifier si les produits existent
+alt Tous les produits existent
+    "Système" -> "Base de données" : Créer le pack (produits et remise)
+    "Système" -> RM : Confirmer création du pack avec promotion
+else Produit non trouvé
+    "Système" -> RM : Avertir produit non trouvé
+end
+
+@enduml
+

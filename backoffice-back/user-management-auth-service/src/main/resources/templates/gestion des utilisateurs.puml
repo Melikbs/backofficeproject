@@ -1,0 +1,12 @@
+@startuml
+actor "Admin" as Admin
+
+rectangle "Gestion des Utilisateurs" {
+    Admin --> (Créer un utilisateur)
+    Admin --> (Modifier un utilisateur)
+    Admin --> (Supprimer un utilisateur)
+    Admin --> (Gérer les rôles des utilisateurs)
+    Admin --> (Activer/Désactiver un compte)
+}
+
+@enduml

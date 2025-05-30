@@ -1,0 +1,16 @@
+@startuml
+actor Utilisateur
+participant "Interface d’authentification" as UI
+participant "Backend" as Backend
+database "Base de données" as DB
+
+Utilisateur -> UI: Saisie login et mot de passe
+UI -> Backend: Envoie login et mot de passe
+Backend -> DB: Vérifie les identifiants
+DB --> Backend: Résultat de la vérification
+alt Identifiants valides
+  Backend -> UI: Affiche l’interface correspondante\n(selon le rôle de l’utilisateur)
+else Identifiants invalides
+  Backend -> UI: Affiche un message d’erreur
+end
+@enduml

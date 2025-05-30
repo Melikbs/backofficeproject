@@ -1,0 +1,22 @@
+<nav class="main-navbar d-flex align-items-center justify-content-between px-4 py-3 shadow-sm">
+  <!-- Toggle Button (mobile only) -->
+  <button
+    class="toggle-sidebar-btn d-md-none me-3"
+    (click)="toggleSidebar.emit()"
+  >
+    <i class="fas fa-bars"></i>
+  </button>
+
+  <!-- Center: Search bar (hidden on mobile) -->
+  <div class="search-bar d-none d-md-flex align-items-center mx-auto">
+    <input type="text" class="form-control" placeholder="Search..." />
+    <i class="fas fa-search search-icon ms-2"></i>
+  </div>
+
+  <!-- Right: Icons + Logout -->
+  <div class="navbar-icons d-flex align-items-center gap-4 ms-auto">
+    <i class="fas fa-bell notification-icon"></i>
+    <i class="fas fa-user-circle profile-icon"></i>
+    <button class="btn btn-outline-danger btn-sm logout-btn" (click)="logout()">Logout</button>
+  </div>
+</nav>

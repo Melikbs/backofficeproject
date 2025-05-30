@@ -1,0 +1,203 @@
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #f8f9fa;
+  overflow-y: hidden;
+
+  .auth-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+
+    .auth-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      width: 100%;
+      max-width: 440px;
+      padding: 2.5rem;
+      border: 1px solid #e9ecef;
+
+      .auth-header {
+        text-align: center;
+        margin-bottom: 2.5rem;
+
+        .auth-icon {
+          font-size: 3rem;
+          color: #E30613;
+          margin-bottom: 1rem;
+        }
+
+        .auth-title {
+          color: #2d2d2d;
+          font-weight: 600;
+          margin-bottom: 0.5rem;
+        }
+
+        .auth-switch {
+          color: #6c757d;
+          
+          a {
+            color: #E30613;
+            font-weight: 500;
+            
+            &:hover {
+              color: #b02a37;
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+
+      .auth-form {
+        .form-group {
+          margin-bottom: 1.5rem;
+
+          label {
+            display: block;
+            color: #495057;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+          }
+
+          .input-group {
+            position: relative;
+
+            .input-icon {
+              position: absolute;
+              left: 1rem;
+              top: 50%;
+              transform: translateY(-50%);
+              color: #6c757d;
+            }
+
+            input {
+              width: 100%;
+              padding: 0.75rem 1rem 0.75rem 2.5rem;
+              border: 1px solid #dee2e6;
+              border-radius: 8px;
+              transition: all 0.3s ease;
+
+              &:focus {
+                border-color: #E30613;
+                box-shadow: 0 0 0 3px rgba(227, 6, 19, 0.15);
+              }
+            }
+          }
+        }
+
+        .auth-btn {
+          width: 100%;
+          background: #E30613;
+          color: white;
+          padding: 0.75rem;
+          border: none;
+          border-radius: 8px;
+          font-weight: 600;
+          transition: all 0.3s ease;
+
+          &:hover {
+            background: #b02a37;
+            transform: translateY(-1px);
+          }
+
+          &:disabled {
+            background: #6c757d;
+            cursor: not-allowed;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .auth-card {
+    padding: 1.5rem !important;
+    margin: 1rem !important;
+  }
+}
+
+/* SweetAlert Custom Styles */
+.custom-swal-popup {
+  border-radius: 12px !important;
+  padding: 2rem !important;
+  max-width: 400px !important;
+  border: 2px solid transparent;
+
+  h3 {
+    color: #2d2d2d;
+    font-weight: 600;
+    margin: 1rem 0 0.5rem;
+    text-align: center;
+  }
+
+  p {
+    color: #6c757d;
+    text-align: center;
+    margin: 0;
+  }
+
+  .swal-icon-box {
+    text-align: center;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .error-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0;
+    
+    li {
+      padding: 0.5rem;
+      margin: 0.25rem 0;
+      background: #fff5f5;
+      border-radius: 6px;
+      color: #2d2d2d;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      &::before {
+        content: '•';
+        color: #E30613;
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+.success-swal {
+  border-color: #28a745 !important;
+
+  .fa-check-circle {
+    color: #28a745;
+  }
+}
+
+.error-swal {
+  border-color: #E30613 !important;
+
+  .fa-times-circle {
+    color: #E30613;
+  }
+}
+
+.custom-swal-btn {
+  background: #E30613 !important;
+  color: white !important;
+  padding: 0.75rem 2rem !important;
+  border-radius: 8px !important;
+  font-weight: 500 !important;
+  transition: all 0.3s ease !important;
+
+  &:hover {
+    background: #b02a37 !important;
+    transform: translateY(-1px);
+  }
+}

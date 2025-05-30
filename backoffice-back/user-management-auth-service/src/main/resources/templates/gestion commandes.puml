@@ -1,0 +1,11 @@
+@startuml
+actor "Admin" as Admin
+actor "Responsable Logistique" as RL
+
+rectangle "Gestion des Commandes" {
+    Admin --> (Consulter la liste des commandes)
+    RL --> (Modifier le statut d'une commande)
+    RL --> (Voir l'historique des commandes)
+}
+
+@enduml

@@ -1,0 +1,47 @@
+@startuml
+actor "Admin" as Admin
+actor "Responsable Logistique" as RL
+entity "Système" as Systeme
+
+== Expédition des Produits ==
+
+RL -> Systeme : Consulter commandes prêtes à être expédiées
+Systeme -> RL : Liste des commandes validées
+
+alt Paiement validé
+    RL -> Systeme : Mettre à jour statut commande en "En expédition"
+    Systeme -> RL : Confirmation expédition
+else Paiement non validé
+    RL -> Systeme : Afficher erreur paiement non validé
+end
+
+RL -> Systeme : Générer bon de livraison
+Systeme -> RL : Bon de livraison généré
+
+RL -> Systeme : Envoyer produits au transporteur
+Systeme -> RL : Confirmation expédition au transporteur
+
+== Suivi de la Livraison ==
+
+RL -> Systeme : Vérifier statut de la livraison
+Systeme -> RL : Statut de la livraison (En transit, Livré)
+
+alt Livraison réussie
+    RL -> Systeme : Mettre à jour statut en "Livré"
+else Retard ou problème
+    RL -> Systeme : Mettre à jour statut en "Retardée"
+end
+
+== Retours de Produits ==
+
+alt Retour accepté
+    Admin -> Systeme : Valider retour produit
+    Systeme -> RL : Organiser retour
+    RL -> Systeme : Vérifier état produit retourné
+    Systeme -> RL : Mettre à jour stock et statut retour
+else Retour refusé
+    Admin -> Systeme : Refuser retour
+    Systeme -> Admin : Notification retour refusé
+end
+
+@enduml

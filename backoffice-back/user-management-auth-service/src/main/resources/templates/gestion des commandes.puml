@@ -1,0 +1,35 @@
+@startuml
+actor "Admin" as Admin
+actor "Responsable Logistique" as RL
+
+== Suivi d'une commande (Responsable Logistique) ==
+RL -> "Système" : Demander le suivi de la commande (id commande)
+"Système" -> "Base de données" : Récupérer les informations de commande
+"Système" -> RL : Afficher l'état actuel de la commande (en préparation, expédiée, livrée)
+
+== Modification de la commande (Responsable Logistique) ==
+RL -> "Système" : Demander modification de la commande (id commande, produits, quantité)
+"Système" -> "Base de données" : Vérifier si la commande peut être modifiée (statut actuel)
+alt Commande modifiable (ex: en préparation)
+    "Système" -> "Base de données" : Mettre à jour la commande (produits, quantité)
+    "Système" -> RL : Confirmer modification de la commande
+else Commande non modifiable (ex: déjà expédiée)
+    "Système" -> RL : Avertir que la commande ne peut pas être modifiée
+end
+
+== Historique des commandes (Admin) ==
+Admin -> "Système" : Demander l'historique des commandes (date, client)
+"Système" -> "Base de données" : Récupérer les commandes correspondant aux critères
+"Système" -> Admin : Afficher l'historique des commandes (date, état, client, produits)
+
+== Suivi des commandes par statut (Responsable Logistique) ==
+RL -> "Système" : Demander les commandes par statut (en préparation, expédiées)
+"Système" -> "Base de données" : Récupérer les commandes par statut
+"Système" -> RL : Afficher la liste des commandes selon le statut
+
+== Modification de l'état d'une commande (Responsable Logistique) ==
+RL -> "Système" : Modifier le statut d'une commande (id commande, nouveau statut)
+"Système" -> "Base de données" : Mettre à jour le statut de la commande
+"Système" -> RL : Confirmer la mise à jour du statut de la commande
+
+@enduml

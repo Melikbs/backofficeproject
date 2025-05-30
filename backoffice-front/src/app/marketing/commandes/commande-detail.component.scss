@@ -1,0 +1,43 @@
+$red-soft: #e74c3c;
+$gray-light: #f8f9fa;
+$gray-dark: #343a40;
+
+.commande-detail-container {
+  background-color: $gray-light;
+  border-radius: 1rem;
+
+  h3 {
+    font-size: 1.8rem;
+  }
+
+  .section-card {
+    background-color: white;
+    border: 1px solid #eee;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  }
+
+  .status-pill {
+    padding: 0.45rem 1.2rem;
+    font-weight: 600;
+    font-size: 0.85rem;
+    border-radius: 999px;
+    text-transform: uppercase;
+
+    &.validated {
+      background-color: rgba(46, 204, 113, 0.12);
+      color: #27ae60;
+    }
+
+    &.refused {
+      background-color: rgba(231, 76, 60, 0.12);
+      color: $red-soft;
+    }
+
+    &.pending {
+      background-color: rgba(243, 156, 18, 0.12);
+      color: #f39c12;
+    }
+  }
+}

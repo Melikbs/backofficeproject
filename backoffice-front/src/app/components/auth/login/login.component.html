@@ -1,0 +1,55 @@
+<!-- login.component.html -->
+<div class="auth-container">
+  <app-navbar></app-navbar>
+
+  <div class="auth-wrapper">
+    <div class="auth-card">
+      <div class="auth-content">
+        <div class="auth-header">
+          <i class="fas fa-user-circle auth-icon"></i>
+          <h2 class="auth-title">Member Login</h2>
+          <p class="auth-switch">Don't have an account? <a href="/register">Sign Up</a></p>
+        </div>
+
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="auth-form">
+          <div class="form-group">
+            <label class="form-label">Email Address</label>
+            <div class="input-group">
+              <i class="fas fa-envelope input-icon"></i>
+              <input 
+                type="email" 
+                class="form-control"
+                placeholder="name@example.com"
+                formControlName="email"
+              >
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Password</label>
+            <div class="input-group">
+              <i class="fas fa-lock input-icon"></i>
+              <input 
+                type="password" 
+                class="form-control"
+                placeholder="••••••••"
+                formControlName="password"
+              >
+            </div>
+          </div>
+
+          <button type="submit" class="auth-btn">
+            Sign In
+            <i class="fas fa-arrow-right btn-icon"></i>
+          </button>
+
+          <div class="auth-footer">
+            <a href="/forgot-password" class="forgot-password">
+              <i class="fas fa-key"></i> Forgot Password?
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

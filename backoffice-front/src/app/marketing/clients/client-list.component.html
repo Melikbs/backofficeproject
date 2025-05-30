@@ -1,0 +1,52 @@
+<div class="client-card">
+    <div class="header-flex">
+      <h2>👥 Clients Management</h2>
+    </div>
+  
+    <div class="table-wrapper">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Username</th>
+            <th>Name</th>
+            <th>CIN</th>
+            <th>Email</th>
+            <th>City</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let client of clients">
+            <td>{{ client.username }}</td>
+            <td>{{ client.nom }} {{ client.prenom }}</td>
+            <td>{{ client.cin }}</td>
+            <td>{{ client.email }}</td>
+            <td>{{ client.ville }}</td>
+            <td>
+              <span [ngClass]="client.actif ? 'badge-active' : 'badge-blacklisted'">
+                {{ client.actif ? 'Active' : 'Blacklisted' }}
+              </span>
+            </td>
+            <td>
+              <button
+                type="button"
+                *ngIf="client.actif"
+                class="btn-client btn-red"
+                (click)="blacklistClient(client.codeClient)">
+                🚫 Blacklist
+              </button>
+              <button
+                type="button"
+                *ngIf="!client.actif"
+                class="btn-client btn-green"
+                (click)="reactivateClient(client.codeClient)">
+                ✅ Unblacklist
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

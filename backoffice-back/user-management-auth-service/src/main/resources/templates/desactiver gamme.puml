@@ -1,0 +1,16 @@
+@startuml
+actor "Responsable marketing" as RM
+participant "Interface de gestion" as UI
+participant "Backend" as Backend
+database "Base de données" as DB
+
+RM -> UI : Accède à la liste des clients
+UI -> RM : Affiche la liste des clients
+RM -> UI : Sélectionne le client à blacklister
+RM -> UI : Confirme le blacklisting
+UI -> Backend : Envoie la demande de blacklisting
+Backend -> DB : Met à jour l’état du client (blacklisté)
+Backend -> UI : Confirme l’action de blacklisting
+UI -> RM : Affiche un message de confirmation
+@enduml
+

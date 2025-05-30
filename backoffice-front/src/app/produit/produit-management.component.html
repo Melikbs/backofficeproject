@@ -1,0 +1,122 @@
+<div class="product-management-container">
+  <div class="management-header">
+    <h2 class="management-title">
+      <i class="fas fa-box-open title-icon"></i>
+      Product Catalog
+    </h2>
+    <button *ngIf="isMarketing" (click)="startAddProduit()" class="primary-btn">
+      <i class="fas fa-plus btn-icon"></i>
+      Add New Product
+    </button>
+  </div>
+  <div class="filter-bar mb-4">
+    <div class="row g-2">
+      <!-- Category Filter -->
+      <div class="col-md-3">
+        <select class="form-select" [(ngModel)]="selectedCategory" (change)="applyFilters()">
+          <option value="">All Categories</option>
+          <option *ngFor="let g of gammes" [value]="g.codeGamme">{{ g.libelle }}</option>
+        </select>
+      </div>
+  
+      <!-- Brand Filter -->
+      <div class="col-md-3">
+        <select class="form-select" [(ngModel)]="selectedBrand" (change)="applyFilters()">
+          <option value="">All Brands</option>
+          <option *ngFor="let m of marques" [value]="m.codeMarque">{{ m.libelle }}</option>
+        </select>
+      </div>
+  
+      <!-- Price Range Filter -->
+      <div class="col-md-3 d-flex gap-2">
+        <input type="number" class="form-control" placeholder="Min Price" [(ngModel)]="minPrice" (input)="applyFilters()">
+        <input type="number" class="form-control" placeholder="Max Price" [(ngModel)]="maxPrice" (input)="applyFilters()">
+      </div>
+  
+      <!-- Reset Button -->
+      <div class="col-md-3 text-end">
+        <button class="btn btn-secondary" (click)="resetFilters()">Reset</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Product Grid -->
+  <div class="product-grid">
+    <div class="product-card" *ngFor="let produit of produits">
+      <div class="image-container">
+        <div class="status-badge" [class.inactive]="!produit.actif">
+          {{ produit.actif ? 'Active' : 'Inactive' }}
+        </div>
+        <img *ngIf="produit.image" 
+             [src]="'http://localhost:8080/api/produits/images/' + produit.image" 
+             alt="Product image" 
+             class="product-image" />
+      </div>
+      <div class="product-content">
+        <h3 class="product-title">{{ produit.libelle }}</h3>
+        <p class="product-description">{{ produit.description }}</p>
+        
+        <div class="product-meta">
+          <div class="price-tag">
+            <i class="fas fa-tag meta-icon"></i>
+            {{ produit.prix | number:'1.2-2' }}DT
+          </div>
+        </div>
+
+        <div class="product-actions">
+          <button *ngIf="isMarketing" (click)="editProduit(produit)" class="primary-btn">
+            <i class="fas fa-edit btn-icon"></i>
+            Edit
+          </button>
+          <button (click)="toggleProductStatus(produit.codeProduit)" class="status-btn">
+            <i class="fas fa-power-off btn-icon"></i>
+            {{ produit.actif ? 'Deactivate' : 'Activate' }}
+          </button>
+          <button *ngIf="isLogistics" class="primary-btn" (click)="openStockManagement(produit)">
+            <i class="fas fa-warehouse btn-icon"></i>
+            Manage Stock
+          </button>
+          <button *ngIf="isMarketing" (click)="deleteProduit(produit.codeProduit)" class="delete-btn">
+            <i class="fas fa-trash-alt btn-icon"></i>
+            Delete
+          </button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stock Management -->
+  <div *ngIf="showStockManagement" class="stock-management">
+    <div class="stock-header">
+      <h2>Stock Management - {{ currentProduct?.libelle }}</h2>
+      <button class="btn-close" (click)="closeStockManagement()">&times;</button>
+    </div>
+    
+    <table class="stock-table">
+      <thead>
+        <tr>
+          <th>Color</th>
+          <th>Quantity</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let stock of currentStocks">
+          <td>{{ getCouleurLibelle(stock.codeCouleur) }}</td>
+          <td>
+            <input type="number" [(ngModel)]="stock.nombreStock" 
+                   (change)="updateStock(stock)" 
+                   [disabled]="!isLogistics"
+                   class="stock-input" />
+          </td>
+          <td>
+            <span class="stock-status" [class.in-stock]="stock.inStock">
+              {{ stock.inStock ? 'In Stock' : 'Out of Stock' }}
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

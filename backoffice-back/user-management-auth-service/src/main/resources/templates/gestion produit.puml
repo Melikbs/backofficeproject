@@ -1,0 +1,15 @@
+@startuml
+actor "Admin" as Admin
+actor "Responsable Marketing" as RM
+actor "Responsable Logistique" as RL
+
+rectangle "Gestion des Produits" {
+    Admin --> (Créer un produit)
+    Admin --> (Modifier un produit)
+    Admin --> (Supprimer un produit)
+    RM --> (Gérer les promotions)
+    RM --> (Créer des packs promotionnels)
+    RL --> (Mettre à jour les stocks)
+}
+
+@enduml

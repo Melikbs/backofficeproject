@@ -1,0 +1,109 @@
+<div class="pack-creation-container">
+  <div class="pack-builder">
+    <!-- Pack Info Form -->
+    <div class="pack-info-form card shadow-sm p-4 mb-4 bg-white">
+      <h4 class="mb-3 text-dark">Pack Details</h4>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <label class="form-label">Pack Name</label>
+          <input type="text" class="form-control" [(ngModel)]="nom" placeholder="Enter pack name" required />
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Description</label>
+          <input type="text" class="form-control" [(ngModel)]="description" placeholder="Enter description" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Live Summary Card -->
+    <div class="summary-card card shadow-sm p-3">
+      <h5 class="mb-3 border-bottom pb-2">Live Summary</h5>
+      <div class="summary-content">
+        <p><strong>Name:</strong> {{ nom || '—' }}</p>
+        <p><strong>Description:</strong> {{ description || '—' }}</p>
+        <p><strong>Products Selected:</strong> {{ selectedForPack.length }}</p>
+        <div *ngIf="selectedForPack.length > 0" class="mt-3">
+          <h6 class="fw-bold mb-2">Discount Overview</h6>
+          <ul>
+            <li *ngFor="let p of selectedForPack">
+              • {{ getProductLibelle(p.codeProduit) }}:
+              <span *ngIf="p.type === 'DT'">{{ p.reductionValeur }} DT</span>
+              <span *ngIf="p.type === 'PERCENT'">{{ p.reductionValeur }}%</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-flex flex-wrap gap-4">
+      <!-- Product List -->
+      <div class="product-list">
+        <h4>All Products</h4>
+        <div class="filter-bar d-flex flex-wrap align-items-center justify-content-between mb-4 px-3 py-2 rounded shadow-sm">
+          <input type="text" class="form-control w-auto flex-grow-1" placeholder="🔍 Search product..." [(ngModel)]="searchTerm">
+          <select class="form-select w-auto" [(ngModel)]="selectedCategory">
+            <option value="">All Categories</option>
+            <option *ngFor="let g of gammes" [value]="g.codeGamme">{{ g.libelle }}</option>
+          </select>
+          <select class="form-select w-auto" [(ngModel)]="selectedBrand">
+            <option value="">All Brands</option>
+            <option *ngFor="let m of marques" [value]="m.codeMarque">{{ m.libelle }}</option>
+          </select>
+          <button class="btn btn-outline-dark" (click)="resetFilters()">
+            <i class="fas fa-sync-alt"></i> Reset
+          </button>
+        </div>
+        <table class="table table-bordered align-middle">
+          <thead>
+            <tr>
+              <th>Code</th>
+              <th>Label</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let produit of filteredProduits()">
+              <td>{{ produit.codeProduit }}</td>
+              <td>{{ produit.libelle }}</td>
+              <td>
+                <button class="btn btn-outline-success btn-sm" (click)="addProduit(produit)">
+                  <i class="fas fa-plus"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- Selected Products -->
+      <div class="selected-products">
+        <h4>Selected Products</h4>
+        <div *ngIf="selectedForPack.length === 0" class="text-muted text-center py-5">
+          <i class="fas fa-box-open fa-2x mb-2 text-secondary"></i>
+          <p>No products selected yet</p>
+        </div>
+        <div *ngFor="let p of selectedForPack" class="selected-product-card mb-3">
+          <div><strong>{{ getProductLibelle(p.codeProduit) }}</strong></div>
+          <div class="d-flex align-items-center gap-2 mt-2">
+            <input type="number" class="form-control form-control-sm w-25" [(ngModel)]="p.reductionValeur" placeholder="0" />
+            <label class="form-check-label me-2">
+              <input type="radio" class="form-check-input" [(ngModel)]="p.type" [value]="'DT'" /> DT
+            </label>
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" [(ngModel)]="p.type" [value]="'PERCENT'" /> %
+            </label>
+            <button class="btn btn-sm btn-outline-danger ms-2" (click)="removeProduit(p.codeProduit)">
+              <i class="fas fa-trash"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Action Buttons -->
+    <div class="d-flex justify-content-end gap-3 mt-4">
+      <button class="btn btn-secondary" (click)="goBack()">Cancel</button>
+      <button class="btn btn-primary" (click)="submitPack()">
+        {{ editingPackId ? 'Update Pack' : 'Create Pack' }}
+      </button>
+    </div>
+  </div>
+</div>

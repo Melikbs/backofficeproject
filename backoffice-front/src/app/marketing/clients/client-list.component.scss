@@ -1,0 +1,134 @@
+$red-soft: #e74c3c;
+$gray-light: #f8f9fa;
+$gray-dark: #343a40;
+
+.client-card {
+  background: white;
+  border-radius: 1.25rem;
+  padding: 2rem;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  margin: 2rem auto;
+  max-width: 1200px;
+}
+
+.header-flex {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; // ⬅️ title aligned left
+  margin-bottom: 1.5rem;
+
+  h2 {
+    margin: 0;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: $gray-dark;
+  }
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: 1rem;
+}
+
+table.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: $gray-light;
+  border-radius: 1rem;
+  overflow: hidden;
+
+  thead {
+    background-color: $gray-dark;
+    color: white;
+    font-size: 0.95rem;
+
+    th {
+      padding: 1rem;
+      text-align: left;
+      font-weight: 600;
+    }
+  }
+
+  tbody {
+    tr {
+      transition: background-color 0.2s ease-in-out;
+
+      &:hover {
+        background-color: #eeeeee;
+      }
+    }
+
+    td {
+      padding: 1rem;
+      vertical-align: middle;
+    }
+  }
+}
+
+.badge-active,
+.badge-blacklisted {
+  display: inline-block;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.8rem;
+  border-radius: 2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-active {
+  background-color: #d4edda;
+  color: #28a745;
+}
+
+.badge-blacklisted {
+  background-color: #f8d7da;
+  color: $red-soft;
+}
+
+.btn-client {
+    background-color: $gray-dark;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.45rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 130px; // ✅ consistent size
+    height: 38px;      // ✅ same height for both
+    text-align: center;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  
+    &:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+  
+    &:active {
+      transform: scale(0.97);
+    }
+  }
+  
+  .btn-red {
+    background-color: $red-soft;
+  
+    &:hover {
+      background-color: lighten($red-soft, 5%);
+    }
+  }
+  
+  .btn-green {
+    background-color: #28a745;
+  
+    &:hover {
+      background-color: lighten(#28a745, 5%);
+    }
+  }
+  

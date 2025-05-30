@@ -1,0 +1,10 @@
+@startuml
+actor "Admin" as Admin
+
+rectangle "Gestion des Paiements" {
+    Admin --> (Gérer la facturation)
+    Admin --> (Effectuer un remboursement)
+    Admin --> (Gérer les méthodes de paiement)
+}
+
+@enduml

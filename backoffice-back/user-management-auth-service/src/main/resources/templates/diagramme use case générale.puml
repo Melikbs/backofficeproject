@@ -1,0 +1,78 @@
+@startuml
+top to bottom direction
+
+actor "Admin" as Admin
+actor "Marketing" as Marketing
+actor "Logistique" as Logistique
+
+rectangle "Backoffice Ooredoo" {
+
+  (S’authentifier) as Auth
+
+  package "Gestion Utilisateurs" {
+    (Gérer rôles) as GR
+    (Gérer utilisateurs) as GU
+  }
+
+  package "Gestion Produits" {
+    (Gérer produits) as GP
+    (Gérer catégories) as GC
+    (Gérer marques) as GM
+    (Gérer packs promotionnels) as GPP
+  }
+
+  package "Gestion Commandes" {
+    (Gérer commandes) as GCMD
+    (Gérer Clients) as GCC
+  }
+
+  package "Gestion Logistique" {
+    (Gérer livraisons) as GL
+    (Suivre état de livraison) as SEL
+    (Générer étiquette d'expédition) as GEE
+    (Gérer Stock) as GS
+  }
+
+  (Visualiser statistiques) as VS
+  (Agent IA Concurrentiel et Idées Marketing) as AgentIA
+
+  ' Inclure l’authentification pour chaque fonctionnalité
+  Auth -[#blue,dashed]-> GR : <<include>>
+  Auth -[#blue,dashed]-> GU : <<include>>
+  Auth -[#blue,dashed]-> GEE : <<include>>
+  Auth -[#blue,dashed]-> GM : <<include>>
+  Auth -[#blue,dashed]-> GPP : <<include>>
+  Auth -[#blue,dashed]-> GCMD : <<include>>
+  Auth -[#blue,dashed]-> GP : <<include>>
+  Auth -[#blue,dashed]-> VS : <<include>>
+  Auth -[#blue,dashed]-> GC : <<include>>
+  Auth -[#blue,dashed]-> GCC : <<include>>
+  Auth -[#blue,dashed]-> AgentIA : <<include>>
+  Auth -[#blue,dashed]-> GS : <<include>>
+  Auth -[#blue,dashed]-> GL : <<include>>
+  Auth -[#blue,dashed]-> SEL : <<include>>
+
+  ' Relations Admin
+  Admin --> GR
+  Admin --> GU
+  Admin --> VS
+
+  ' Relations Marketing
+  Marketing --> GP
+  Marketing --> GC
+  Marketing --> GM
+  Marketing --> GPP
+  Marketing --> GCMD
+  Marketing --> VS
+  Marketing --> GCC
+  Marketing --> AgentIA
+
+  ' Relations Logistique
+  Logistique --> GL
+  Logistique --> SEL
+  Logistique --> VS
+  Logistique --> GS
+}
+
+@enduml
+

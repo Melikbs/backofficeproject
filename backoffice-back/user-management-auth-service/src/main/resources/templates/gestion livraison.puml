@@ -1,0 +1,10 @@
+@startuml
+actor "Responsable Logistique" as RL
+
+rectangle "Gestion des Livraisons" {
+    RL --> (Expédier une commande)
+    RL --> (Suivre les livraisons)
+    RL --> (Gérer les retours)
+}
+
+@enduml
