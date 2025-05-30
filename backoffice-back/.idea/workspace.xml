@@ -5,85 +5,234 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="794ca9a6-b1e8-4cb5-af03-21f5b1206bbf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-management-auth-service/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/Dto/GammeDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/Dto/MarqueDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/Dto/ProfileDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/Dto/UserDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/Exceptions/EmailException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/Exceptions/ExpiredTokenException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/Exceptions/InvalidTokenException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/Exceptions/WeakPasswordException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/Helpers/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/Helpers/PasswordValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/controller/GammeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/controller/MarqueController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/mapper/GammeMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/mapper/MarqueMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/model/Couleur.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/model/Gamme.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/model/Marque.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/model/MessageResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/model/PasswordResetToken.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/model/Produit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/model/Stock.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/model/UserProfile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/repositories/GammeRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/repositories/MarqueRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/repositories/PasswordResetTokenRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/repositories/UserProfileRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/service/EmailService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/service/GammeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/service/MarqueService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/service/MarqueServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/service/PasswordResetService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-management-auth-service/src/main/resources/static/logo_ooredoo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-management-auth-service/src/main/resources/templates/Authentification et gestion des rôles.puml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-management-auth-service/src/main/resources/templates/diagramme générale.puml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-management-auth-service/src/main/resources/templates/gestion commandes.puml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-management-auth-service/src/main/resources/templates/gestion des commandes.puml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-management-auth-service/src/main/resources/templates/gestion des livraison.puml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-management-auth-service/src/main/resources/templates/gestion des paiement.puml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-management-auth-service/src/main/resources/templates/gestion des paiements.puml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-management-auth-service/src/main/resources/templates/gestion des produits.puml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-management-auth-service/src/main/resources/templates/gestion des utilisateurs.puml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-management-auth-service/src/main/resources/templates/gestion livraison.puml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-management-auth-service/src/main/resources/templates/gestion produit.puml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-management-auth-service/src/main/resources/templates/tableau de board use case.puml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-management-auth-service/src/main/resources/templates/tableau de board.puml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-management-auth-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-management-auth-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/BackOfficeProject/BackOfficeProjectApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/BackOfficeProjectApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/BackOfficeProject/Config/DataInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/Config/DataInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/BackOfficeProject/Config/JwtFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/Config/JwtFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/BackOfficeProject/Config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/Config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/BackOfficeProject/Dto/UserRoleDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/Dto/UserRoleDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/BackOfficeProject/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/BackOfficeProject/model/Roles.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/model/Roles.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/BackOfficeProject/model/UserPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/model/UserPrincipal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/BackOfficeProject/model/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/model/Users.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/BackOfficeProject/repositories/RoleRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/repositories/RoleRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/BackOfficeProject/repositories/UserRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/repositories/UserRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/BackOfficeProject/service/JWT/JWTService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/service/JWT/JWTService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/BackOfficeProject/service/MyUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/service/MyUserDetailsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/BackOfficeProject/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/test/java/com/example/BackOfficeProject/BackOfficeProjectApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-management-auth-service/src/test/java/com/example/BackOfficeProject/BackOfficeProjectApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backoffice-front/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/../backoffice-front/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backoffice-front/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../backoffice-front/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backoffice-front/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../backoffice-front/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backoffice-front/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../backoffice-front/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backoffice-front/src/app/app.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../backoffice-front/src/app/app.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backoffice-front/src/app/app.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backoffice-front/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../backoffice-front/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backoffice-front/src/app/app.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../backoffice-front/src/app/app.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backoffice-front/src/app/app.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../backoffice-front/src/app/app.routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backoffice-front/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../backoffice-front/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backoffice-front/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../backoffice-front/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backoffice-front/src/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../backoffice-front/src/styles.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backoffice-front/tsconfig.app.json" beforeDir="false" afterPath="$PROJECT_DIR$/../backoffice-front/tsconfig.app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backoffice-front/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/../backoffice-front/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backoffice-front/tsconfig.spec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../backoffice-front/tsconfig.spec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ai-chatbot-service/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ai-chatbot-service/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/BackOfficeProjectApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/Config/DataInitializer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/Config/JwtFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/Config/SecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/Config/WebSocketConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/Dto/AIComparisonResult.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/Dto/CaracteristiqueRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/Dto/ChatMessageDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/Dto/ChatResponseDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/Dto/ClientDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/Dto/CommandeDetailDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/Dto/CommandeResponseDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/Dto/CouleurDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/Dto/DashboardStatisticsDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/Dto/GammeDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/Dto/LigneCommandeDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/Dto/LivraisonDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/Dto/MarqueDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/Dto/PackDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/Dto/PackProduitDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/Dto/ProduitRequestDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/Dto/ProduitResponseDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/Dto/ProfileDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/Dto/StockDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/Dto/UserDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/Dto/UserRoleDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/Exceptions/EmailException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/Exceptions/ExpiredTokenException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/Exceptions/InvalidTokenException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/Exceptions/ResourceNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/Exceptions/WeakPasswordException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/Helpers/AutowiringSpringBeanJobFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/Helpers/GlobalExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/Helpers/PasswordValidator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/controller/AIAgentController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/controller/ChatbotController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/controller/ClientController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/controller/CommandeController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/controller/CouleurController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/controller/DashboardController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/controller/GammeController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/controller/LivraisonController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/controller/MarqueController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/controller/NotificationController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/controller/PackController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/controller/ProduitController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/controller/RecommendationController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/controller/StockController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/controller/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/job/LivraisonStatusUpdateJob.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/mapper/ClientMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/mapper/CommandeMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/mapper/CouleurMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/mapper/GammeMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/mapper/LivraisonMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/mapper/MarqueMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/mapper/PackMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/mapper/ProduitMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/mapper/StockMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/model/Caracteristique.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/model/Client.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/model/Commande.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/model/CommandeStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/model/Couleur.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/model/Gamme.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/model/LigneCommande.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/model/Livraison.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/model/Marque.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/model/MessageResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/model/Pack.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/model/PackProduit.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/model/PasswordResetToken.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/model/Possede.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/model/Produit.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/model/Roles.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/model/StatusLivraison.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/model/Stock.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/model/Theme.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/model/UserPrincipal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/model/UserProfile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/model/Users.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/repositories/CaracteristiqueRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/repositories/ClientRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/repositories/CommandeRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/repositories/CouleurRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/repositories/GammeRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/repositories/LigneCommandeRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/repositories/LivraisonRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/repositories/MarqueRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/repositories/PackRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/repositories/PasswordResetTokenRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/repositories/PossedeRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/repositories/ProduitRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/repositories/RoleRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/repositories/StockRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/repositories/ThemeRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/repositories/UserProfileRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/repositories/UserRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/service/AIAgentService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/service/CaracteristiqueService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/service/ClientService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/service/ClientServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/service/CommandeService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/service/CommandeServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/service/CouleurService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/service/CouleurServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/service/DashboardService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/service/EmailService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/service/FileStorageService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/service/GammeService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/service/ICaracteristiqueService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/service/JWT/JWTService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/service/LivraisonService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/service/LivraisonServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/service/MarqueService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/service/MarqueServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/service/MyUserDetailsService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/service/PackService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/service/PackServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/service/PasswordResetService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/service/ProduitService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/service/RecommendationService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/service/StockService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/service/StockServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/service/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/java/com/example/backofficeproject/utilities/ShippingLabelGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/resources/data.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/resources/static/labels/etiquette_49E65869-77C.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/resources/static/labels/etiquette_50CD8C50-82D.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/resources/static/labels/etiquette_5415E3E1-5E7.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/resources/static/labels/etiquette_7099B2C3-8D7.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/resources/static/labels/etiquette_9E618760-108.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/resources/static/labels/etiquette_9EFF4B1A-BFD.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/resources/static/labels/etiquette_D29A7DA0-EA3.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/resources/static/labels/etiquette_E46C122C-F6D.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/resources/static/labels/etiquette_F7F7884E-616.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/resources/static/logo_ooredoo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/resources/templates/Activation des comptes.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/resources/templates/Authentification .png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/resources/templates/Authentification et gestion des rôles.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/resources/templates/ajout gamme.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/resources/templates/ajout gamme.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/resources/templates/ajout pack.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/resources/templates/ajout produit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/resources/templates/blacklister client.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/resources/templates/desactiver gamme.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/resources/templates/desactiver gamme.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/resources/templates/diagramme des classes.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/resources/templates/diagramme générale.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/resources/templates/diagramme use case générale.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/resources/templates/diagramme use case générale.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/resources/templates/fff.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/resources/templates/gestion client.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/resources/templates/gestion client.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/resources/templates/gestion commandes.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/resources/templates/gestion des commandes.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/resources/templates/gestion des comptes.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/resources/templates/gestion des comptes.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/resources/templates/gestion des livraison.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/resources/templates/gestion des paiement.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/resources/templates/gestion des paiements.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/resources/templates/gestion des produits.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/resources/templates/gestion des stocks.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/resources/templates/gestion des utilisateurs.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/resources/templates/gestion livraison.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/resources/templates/gestion produit.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/resources/templates/modifier marque.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/resources/templates/tableau de board use case.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/resources/templates/tableau de board.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/resources/templates/valider commandes.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/main/resources/templates/valider livraison.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/src/test/java/com/example/BackOfficeProject/BackOfficeProjectApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/uploads/1745271981117_logo_ooredoo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/uploads/1745272049285_logo_ooredoo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/uploads/1745272074291_Capture d’écran .png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/uploads/1745273232292_1745272049285_logo_ooredoo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/uploads/1745273463406_Capture d’écran 2024-12-29 212533.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/uploads/1745318854783_Capture d’écran .png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/uploads/1745328554702_Capture d’écran 2024-10-21 .png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/uploads/1745330756679_Capture d’écran 2024-10-21 .png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/uploads/1745330773901_Capture d’écran 2024-10-21 .png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/uploads/1745331184620_Capture d’écran 2024-11-14 130846.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/uploads/1745332404713_Capture d’écran 2024-11-14 130908.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/uploads/1745334225491_Capture d’écran 2024-10-21 161531.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/uploads/1745341323095_1745332404713_Capture d’écran 2024-11-14 130908.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/uploads/1745342502914_1745332404713_Capture d’écran 2024-11-14 130908.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/uploads/1745342829659_1745332404713_Capture d’écran 2024-11-14 130908.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/uploads/1745343121474_Capture d’écran .png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/uploads/1745343795587_Capture d’écran 2024-10-21 .png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/uploads/1745343868313_Capture d’écran 2024-10-21 .png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/uploads/1745344128139_Capture d’écran 2024-11-14 130846.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/uploads/1745356874514_portable-samsung-galaxy-s24-ultra.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/uploads/1745356980754_portable-samsung-galaxy-s24-ultra.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/uploads/1745419489995_Airpods Samsung.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/uploads/1745848767664_1745271981117_logo_ooredoo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/uploads/Airpods Samsung.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/uploads/airpods_3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/uploads/alcatel.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/uploads/alcatel_1se.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/uploads/anker_powercore.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/uploads/apple_watch_se.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/uploads/fitbit_versa3.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/uploads/hp_pavilion.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/uploads/huawei_ax3.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/uploads/huawei_ax3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/uploads/huawei_freebuds.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/uploads/ideapad3.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/uploads/infinix_smart7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/uploads/mi_box_s.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/uploads/ooredoo_fiber_kit.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/uploads/ooredoo_sim.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/uploads/placeholder.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/uploads/portable-samsung-galaxy-s24-ultra.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/uploads/realme_c55.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/uploads/samsung_a14.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/uploads/samsung_tv_box.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/uploads/tplink_router.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/uploads/watch_s1.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-management-auth-service/uploads/zte_f660.jpeg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,35 +274,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Spring Boot.BackOfficeProjectApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.user-management-auth-service.executor&quot;: &quot;Debug&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/melik/PFE/backoffice-back/user-management-auth-service&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.BackOfficeProjectApplication.executor": "Run",
+    "Spring Boot.user-management-auth-service.executor": "Debug",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/melik/PFE/backoffice-back/springboot",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.example.BackOfficeProject.Config.JwtFilter" />
@@ -204,6 +353,7 @@
       <workItem from="1739880291087" duration="679000" />
       <workItem from="1744017890813" duration="102000" />
       <workItem from="1744837333416" duration="34000" />
+      <workItem from="1748607949244" duration="823000" />
     </task>
     <servers />
   </component>
